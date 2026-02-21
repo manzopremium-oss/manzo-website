@@ -5,12 +5,22 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Download, X } from 'lucide-react';
 import Image from 'next/image';
 
+import { usePathname } from 'next/navigation';
+
 const PWAInstall = () => {
+    const pathname = usePathname();
+    const isHomePage = pathname === '/';
     const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
     const [showPrompt, setShowPrompt] = useState(false);
     const [isIos, setIsIos] = useState(false);
 
     useEffect(() => {
+        // Only show prompt on home page
+        if (!isHomePage) {
+            setShowPrompt(false);
+            return;
+        }
+
         // Check if app is already in standalone mode
         if (window.matchMedia('(display-mode: standalone)').matches) {
             return;
@@ -31,8 +41,10 @@ const PWAInstall = () => {
         const handler = (e: any) => {
             e.preventDefault();
             setDeferredPrompt(e);
-            // Show prompt after a 5 second delay
-            setTimeout(() => setShowPrompt(true), 5000);
+            // Show prompt after a 5 second delay if on home page
+            if (isHomePage) {
+                setTimeout(() => setShowPrompt(true), 5000);
+            }
         };
 
         window.addEventListener('beforeinstallprompt', handler);
@@ -46,17 +58,19 @@ const PWAInstall = () => {
             };
         }
 
-        // For iOS, just show it after some time
-        if (isIosDevice) {
+        // For iOS, just show it after some time if on home page
+        if (isIosDevice && isHomePage) {
             setTimeout(() => setShowPrompt(true), 5000);
         }
 
-        return () => window.removeEventListener('beforeinstallprompt', handler);
-    }, []);
+        return () => {
+            window.removeEventListener('beforeinstallprompt', handler);
+        };
+    }, [isHomePage]);
 
     const handleInstall = async () => {
         if (isIos) {
-            // iOS doesn't support the prompt, we just show a msg (this could be enhanced)
+            // For iOS, we keep the prompt open to show instructions
             return;
         }
 
@@ -75,43 +89,57 @@ const PWAInstall = () => {
         <AnimatePresence>
             {showPrompt && (
                 <motion.div
-                    initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                    initial={{ opacity: 0, y: 50, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 20, scale: 0.9 }}
-                    className="fixed bottom-24 left-4 right-4 md:left-auto md:right-32 md:w-80 z-[110] p-4 glass-card rounded-2xl border border-white/30 shadow-2xl backdrop-blur-xl"
+                    exit={{ opacity: 0, y: 30, scale: 0.95 }}
+                    className="fixed bottom-28 left-4 right-4 md:left-auto md:right-32 md:w-80 z-[110] p-5 glass-card rounded-3xl border border-white/30 shadow-[0_20px_50px_rgba(0,0,0,0.3)] backdrop-blur-2xl"
                 >
                     <button
                         onClick={() => setShowPrompt(false)}
-                        className="absolute top-2 right-2 text-white/50 hover:text-white"
+                        className="absolute top-3 right-3 text-white/40 hover:text-white transition-colors"
                     >
-                        <X size={16} />
+                        <X size={18} />
                     </button>
 
-                    <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/20 overflow-hidden">
+                    <div className="flex items-start gap-4">
+                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-white/20 to-white/5 flex items-center justify-center border border-white/20 overflow-hidden shadow-inner">
                             <Image
                                 src="/lgo whi@4x.webp"
                                 alt="Manzo Logo"
-                                width={40}
-                                height={40}
-                                className="object-contain"
+                                width={45}
+                                height={45}
+                                className="object-contain filter drop-shadow-md"
                             />
                         </div>
-                        <div className="flex-1">
-                            <h3 className="text-white text-sm font-bold uppercase tracking-widest">Install Manzo</h3>
-                            <p className="text-white/60 text-[10px] leading-tight mt-1">
-                                {isIos ? "Tap 'Share' then 'Add to Home Screen' to install this app." : "Add Manzo to your home screen for a premium experience."}
+                        <div className="flex-1 pt-0.5">
+                            <h3 className="text-white text-sm font-black uppercase tracking-[0.15em]">Manzo Official</h3>
+                            <p className="text-white/70 text-[11px] leading-relaxed mt-1.5 font-medium">
+                                {isIos
+                                    ? "Install Manzo for the fastest premium shopping experience. Tap 'Share' then 'Add to Home Screen'."
+                                    : "Get the Manzo App for exclusive drops and a seamless premium experience."}
                             </p>
                         </div>
                     </div>
 
-                    <button
-                        onClick={handleInstall}
-                        className={`w-full mt-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] transition-all 
-              ${isIos ? 'bg-white/5 text-white/50 cursor-default' : 'bg-white text-black hover:bg-white/90 active:scale-95'}`}
-                    >
-                        {isIos ? "Installation Guide" : "Install Now"}
-                    </button>
+                    <div className="mt-5 flex gap-2">
+                        <button
+                            onClick={handleInstall}
+                            className={`flex-1 py-3 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] transition-all 
+                ${isIos
+                                    ? 'bg-white/10 text-white/50 border border-white/10'
+                                    : 'bg-white text-black hover:bg-[#d4af37] hover:text-white active:scale-95 shadow-lg'}`}
+                        >
+                            {isIos ? "iOS Instructions" : "Install Now"}
+                        </button>
+                        {isIos && (
+                            <button
+                                onClick={() => setShowPrompt(false)}
+                                className="px-4 py-3 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] bg-white/5 text-white/70 border border-white/10 hover:bg-white/10"
+                            >
+                                Got it
+                            </button>
+                        )}
+                    </div>
                 </motion.div>
             )}
         </AnimatePresence>
