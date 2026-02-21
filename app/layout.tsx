@@ -28,10 +28,17 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Manzo",
-  }
+  },
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Manzo",
+  },
 };
 
 import WhatsAppButton from "@/components/WhatsAppButton";
+import PWAInstall from "@/components/PWAInstall";
 
 export default function RootLayout({
   children,
@@ -81,6 +88,7 @@ export default function RootLayout({
         />
         {children}
         <WhatsAppButton />
+        <PWAInstall />
       </body>
     </html>
   );

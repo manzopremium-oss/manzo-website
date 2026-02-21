@@ -224,7 +224,7 @@ const Hero = () => {
                             transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
                             className="flex justify-start"
                         >
-                            <Link href="/best-sellers" className="group relative glass-card text-white px-10 py-4 rounded-full text-xs font-bold uppercase tracking-[0.2em] transition-all shadow-2xl hover:scale-105 active:scale-95 hover:bg-white hover:text-black">
+                            <Link href="/best-sellers" className="group relative glass-card text-white px-6 py-3 md:px-10 md:py-4 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] transition-all shadow-2xl hover:scale-105 active:scale-95 hover:bg-white hover:text-black">
                                 <span className="relative z-10">Browse Collections</span>
                             </Link>
                         </motion.div>

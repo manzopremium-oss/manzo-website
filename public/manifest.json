@@ -1,0 +1,22 @@
+{
+    "name": "Manzo - Premier Wholesale Mens Fashion",
+    "short_name": "Manzo",
+    "description": "Leading wholesale mens fashion manufacturer providing high-quality wholesale male clothing and mens wear.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#444459",
+    "theme_color": "#444459",
+    "icons": [
+        {
+            "src": "/Manzo Logo White@4x.webp",
+            "sizes": "512x512",
+            "type": "image/webp",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/Manzo Logo Black@4x.webp",
+            "sizes": "512x512",
+            "type": "image/webp"
+        }
+    ]
+}
