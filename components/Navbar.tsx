@@ -134,7 +134,10 @@ const Navbar = () => {
                     <button
                         id="pwa-install-mobile-btn"
                         className="flex items-center gap-3 px-8 py-3 rounded-full border border-white/20 text-white/70 hover:text-white transition-all bg-white/5"
-                        onClick={() => setIsMenuOpen(false)}
+                        onClick={() => {
+                            setIsMenuOpen(false);
+                            window.dispatchEvent(new CustomEvent('trigger-pwa-install'));
+                        }}
                     >
                         <span className="text-[10px] font-black uppercase tracking-[0.2em]">Install App</span>
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

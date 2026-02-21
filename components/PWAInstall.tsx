@@ -47,16 +47,13 @@ const PWAInstall = () => {
             }
         };
 
-        window.addEventListener('beforeinstallprompt', handler);
+        const triggerHandler = () => {
+            setShowPrompt(true);
+            handleInstall();
+        };
 
-        // Listen for the mobile navbar button
-        const mobileBtn = document.getElementById('pwa-install-mobile-btn');
-        if (mobileBtn) {
-            mobileBtn.onclick = (e) => {
-                e.preventDefault();
-                handleInstall();
-            };
-        }
+        window.addEventListener('beforeinstallprompt', handler);
+        window.addEventListener('trigger-pwa-install', triggerHandler);
 
         // For iOS, just show it after some time if on home page
         if (isIosDevice && isHomePage) {
@@ -65,6 +62,7 @@ const PWAInstall = () => {
 
         return () => {
             window.removeEventListener('beforeinstallprompt', handler);
+            window.removeEventListener('trigger-pwa-install', triggerHandler);
         };
     }, [isHomePage]);
 
