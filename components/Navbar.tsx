@@ -3,17 +3,34 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
+    const pathname = usePathname();
+    const isHomePage = pathname === '/';
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isHidden, setIsHidden] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
+            // Scroll threshold for dark navbar style
             if (window.scrollY > 50) {
                 setIsScrolled(true);
             } else {
                 setIsScrolled(false);
+            }
+
+            // Hide navbar when reaching the bottom (Footer section)
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight;
+            const footerThreshold = 400; // Adjust based on footer height
+
+            if (scrollPosition > docHeight - footerThreshold) {
+                setIsHidden(true);
+            } else {
+                setIsHidden(false);
             }
         };
 
@@ -21,25 +38,33 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const logoSrc = isScrolled ? "/Manzo Logo Black@4x.webp" : "/Manzo Logo White@4x.webp";
-    const navTextClass = isScrolled ? "text-gray-800 hover:text-black" : "text-gray-300 hover:text-white";
-    const navBgClass = isScrolled ? "bg-white/80 border-black/5 shadow-sm" : "bg-[#444459]/80 border-white/10";
-    const navContainerClass = isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-4" : "py-6";
+    // On non-home pages, we want the "scrolled" style (black logo/text) by default
+    const showDarkNavbar = isScrolled || !isHomePage;
+    const logoSrc = showDarkNavbar ? "/Manzo Logo Black@4x.webp" : "/Manzo Logo White@4x.webp";
+    const navContainerClass = showDarkNavbar ? "py-4" : "py-6";
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 font-sans transition-all duration-300 ${navContainerClass}`}>
+        <motion.nav
+            initial={{ y: 0, opacity: 1 }}
+            animate={{
+                y: isHidden ? -100 : 0,
+                opacity: isHidden ? 0 : 1
+            }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 font-sans transition-all duration-300 ${navContainerClass}`}
+        >
             {/* Logo (Left Aligned) */}
             <div className="flex-shrink-0 z-50">
                 <Link href="/" className="flex items-center gap-2 group">
                     <div
-                        className="glitch-wrapper relative h-8 md:h-10 w-auto aspect-[3/1]"
+                        className="glitch-wrapper relative h-12 md:h-16 w-auto aspect-[3/1]"
                         style={{ '--logo-url': `url('${logoSrc}')` } as React.CSSProperties}
                     >
                         <Image
                             src={logoSrc}
                             alt="Manzo"
-                            width={120}
-                            height={40}
+                            width={180}
+                            height={60}
                             className="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105 relative z-10"
                             priority
                         />
@@ -48,22 +73,23 @@ const Navbar = () => {
             </div>
 
             {/* Desktop Pill Menu (Right Aligned - Hidden on Mobile) */}
-            <div className={`hidden md:flex backdrop-blur-md rounded-full px-1 py-1 items-center border transition-all duration-300 ${navBgClass}`}>
+            <div className={`hidden md:flex items-center transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${showDarkNavbar ? 'glass-card px-3 py-2 shadow-2xl translate-y-0' : 'px-2 py-1.5 translate-y-[-4px]'}`}>
                 <ul className="flex items-center space-x-1">
-                    {['Men', 'Women', 'Kids'].map((item) => (
+                    {['Men', 'New Collection', 'Best Sellers'].map((item) => (
                         <li key={item}>
                             <Link
-                                href={`#${item.toLowerCase()}`}
-                                className={`px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all block ${navTextClass} hover:bg-black/5`}
+                                href={`/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                                className={`relative px-5 py-2 rounded-full text-xs uppercase tracking-widest font-bold transition-all block group overflow-hidden ${showDarkNavbar ? 'text-gray-800 hover:text-black' : 'text-white hover:text-white/80'}`}
                             >
-                                {item}
+                                <span className="relative z-10">{item}</span>
+                                <span className="absolute inset-0 bg-black/5 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom rounded-full" />
                             </Link>
                         </li>
                     ))}
                     <li>
                         <Link
-                            href="#contact"
-                            className={`px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all block ${isScrolled ? 'bg-black text-white hover:bg-gray-800' : 'text-white bg-white/10 hover:bg-white/20'}`}
+                            href="/contact"
+                            className={`px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-bold transition-all block shadow-md hover:shadow-lg hover:scale-105 active:scale-95 ${showDarkNavbar ? 'bg-black text-white hover:bg-gray-800' : 'bg-white text-black hover:bg-gray-100'}`}
                         >
                             Contact
                         </Link>
@@ -73,7 +99,7 @@ const Navbar = () => {
 
             {/* Mobile Menu Button (Visible on Mobile) */}
             <button
-                className={`md:hidden z-50 p-2 backdrop-blur-md rounded-full border transition-all ${isScrolled ? 'text-black border-black/10 bg-white/50' : 'text-white bg-black/20 border-white/10'}`}
+                className={`md:hidden z-50 p-2 backdrop-blur-md rounded-full border transition-all ${showDarkNavbar ? 'text-black border-black/10 bg-white/50' : 'text-white bg-black/20 border-white/10'}`}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
                 {isMenuOpen ? (
@@ -86,10 +112,10 @@ const Navbar = () => {
             {/* Mobile Menu Overlay */}
             {isMenuOpen && (
                 <div className="fixed inset-0 bg-[#444459]/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center space-y-8 md:hidden">
-                    {['Men', 'Women', 'Kids'].map((item) => (
+                    {['Men', 'New Collection', 'Best Sellers'].map((item) => (
                         <Link
                             key={item}
-                            href={`#${item.toLowerCase()}`}
+                            href={`/${item.toLowerCase().replace(/\s+/g, '-')}`}
                             className="text-2xl font-serif text-white hover:text-[#eec170] transition-colors"
                             onClick={() => setIsMenuOpen(false)}
                         >
@@ -97,7 +123,7 @@ const Navbar = () => {
                         </Link>
                     ))}
                     <Link
-                        href="#contact"
+                        href="/contact"
                         className="px-8 py-3 rounded-full text-sm uppercase tracking-widest font-bold text-black bg-white hover:bg-gray-200 transition-all shadow-lg"
                         onClick={() => setIsMenuOpen(false)}
                     >
@@ -105,7 +131,7 @@ const Navbar = () => {
                     </Link>
                 </div>
             )}
-        </nav>
+        </motion.nav>
     );
 };
 

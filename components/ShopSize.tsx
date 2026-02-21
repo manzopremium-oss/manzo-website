@@ -6,13 +6,13 @@ import Image from 'next/image';
 
 const ShopSize = () => {
     return (
-        <section className="bg-white py-16 flex flex-col items-center">
+        <section className="bg-white pt-16 pb-0 flex flex-col items-center">
 
             <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-8 uppercase tracking-widest">
                 Shop Your Size
             </h2>
 
-            <div className="w-full h-[322px] bg-[#87CEEB] relative overflow-hidden">
+            <div className="w-full h-[400px] md:h-[500px] bg-[#87CEEB] relative overflow-hidden">
 
                 {/* Background Image */}
                 <motion.div
@@ -23,8 +23,8 @@ const ShopSize = () => {
                     className="absolute inset-0 w-full h-full"
                 >
                     <Image
-                        src="/Represent Clo_.jpeg"
-                        alt="Models posing"
+                        src="/Gemini_Generated_Image_iui7tfiui7tfiui7.png"
+                        alt="Models showcasing the latest Manzo wholesale male clothing collections"
                         fill
                         className="object-cover object-top"
                     />

@@ -4,11 +4,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-const NewCollection = () => {
+const NewCollection = ({ titleTag: TitleTag = "h2" }: { titleTag?: "h1" | "h2" }) => {
     return (
-        <section className="py-16 bg-[#fafafa]">
+        <section id="new-collection" className="py-16 bg-[#fafafa]">
             <div className="container mx-auto px-6">
-                <h2 className="text-4xl md:text-5xl font-serif text-black mb-12 text-center md:text-left">New Collection</h2>
+                <TitleTag className="text-4xl md:text-5xl font-serif text-black mb-12 text-center md:text-left">New Collection</TitleTag>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Card 1: Men's Winter Collection */}
@@ -19,15 +19,15 @@ const NewCollection = () => {
                         className="relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden group"
                     >
                         <Image
-                            src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?q=80&w=1974&auto=format&fit=crop"
-                            alt="Men's Winter Collection"
+                            src="/men's fashion_old money style_mans style_ mans outfits.jpeg"
+                            alt="Manzo Men's Winter Collection - High-quality wholesale mens fashion"
                             fill
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
 
                         <div className="absolute top-8 left-8">
-                            <h3 className="text-2xl font-serif text-black">Men's Winter Collection</h3>
+                            <h3 className="text-2xl font-serif text-black">Men&apos;s Winter Collection</h3>
                         </div>
 
                         <div className="absolute bottom-8 right-8">
@@ -47,14 +47,14 @@ const NewCollection = () => {
                     >
                         <Image
                             src="/Take an Official Look at AMBUSH x Levi's Denim___.jpeg"
-                            alt="Men's Denim Collection"
+                            alt="Manzo Men's Denim Collection - Premium wholesale male clothing"
                             fill
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
 
                         <div className="absolute top-8 right-8 text-right">
-                            <h3 className="text-2xl font-serif text-black mb-1">Men's Denim</h3>
+                            <h3 className="text-2xl font-serif text-black mb-1">Men&apos;s Denim</h3>
                             <p className="text-xl font-serif text-black">Collection</p>
                         </div>
 

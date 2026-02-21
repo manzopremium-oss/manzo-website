@@ -6,41 +6,41 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 // Footer component with social links
-const Footer = () => {
+const Footer = ({ className = "bg-transparent" }: { className?: string }) => {
     return (
-        <footer className="bg-[#444459] pt-12 md:pt-20 pb-20 md:pb-40 px-4 md:px-6 relative overflow-hidden">
+        <footer className={`${className} pt-10 md:pt-16 pb-0 relative overflow-hidden`}>
             <div className="container mx-auto relative z-10">
-                <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-12 lg:p-16 w-full text-black relative overflow-hidden shadow-2xl">
+                <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-10 lg:p-12 w-full text-black relative shadow-2xl">
 
                     {/* Top Section */}
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-8 mb-10 md:mb-16 relative z-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 md:gap-16 lg:gap-8 relative z-10">
 
-                        {/* Brand Column (Left) */}
+                        {/* Brand Column */}
                         <div className="lg:col-span-5 flex flex-col items-start">
                             <Link href="/" className="flex items-center gap-2 mb-6">
-                                <div className="relative h-8 w-32">
+                                <div className="relative h-8 w-32 translate-x-[-4px]">
                                     <Image
                                         src="/Manzo Logo White@4x.webp"
                                         alt="Manzo"
                                         fill
-                                        className="object-contain filter invert" // Invert color for white background
+                                        className="object-contain filter invert"
                                     />
                                 </div>
                             </Link>
-                            <p className="text-gray-500 text-sm leading-relaxed max-w-sm mb-8">
-                                Manzo empowers retailers to transform their inventory with premium wholesale mens fashion.
-                                Making high-quality male clothing accessible and profitable.
+                            <p className="text-gray-500 text-[13px] leading-relaxed max-w-sm mb-8">
+                                Manzo is one of the premier wholesale mens fashion manufacturers. We specialize in
+                                wholesale male clothing and mens wear, helping retailers transform their inventory
+                                with the best mens wholesale clothing.
                             </p>
 
-                            {/* Social Icons */}
                             <div className="flex gap-4">
                                 {[
                                     { name: 'Twitter', icon: Twitter, href: '#' },
-                                    { name: 'Instagram', icon: Instagram, href: '#' },
+                                    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/manzo_clothing_india_/' },
                                     { name: 'LinkedIn', icon: Linkedin, href: '#' },
                                     { name: 'GitHub', icon: Github, href: '#' }
                                 ].map((social) => (
-                                    <Link key={social.name} href={social.href} className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-black hover:text-white transition-colors text-gray-600">
+                                    <Link key={social.name} href={social.href} className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-50 hover:bg-black hover:text-white transition-all duration-300 text-gray-400">
                                         <span className="sr-only">{social.name}</span>
                                         <social.icon className="w-4 h-4" />
                                     </Link>
@@ -48,63 +48,48 @@ const Footer = () => {
                             </div>
                         </div>
 
-                        {/* Links Columns (Right) */}
-                        <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8">
-
-                            {/* Column 1 */}
-                            <div>
-                                <h4 className="font-bold mb-6 text-sm uppercase tracking-wider">Product</h4>
-                                <ul className="space-y-4 text-sm text-gray-500">
-                                    <li><Link href="#features" className="hover:text-black transition-colors">Features</Link></li>
-                                    <li><Link href="#pricing" className="hover:text-black transition-colors">Pricing</Link></li>
-                                    <li><Link href="#integrations" className="hover:text-black transition-colors">Integrations</Link></li>
-                                    <li><Link href="#changelog" className="hover:text-black transition-colors">Changelog</Link></li>
+                        {/* Navigational Links (Right Side) */}
+                        <div className="lg:col-span-7 grid grid-cols-2 gap-8 md:gap-6 lg:mt-2">
+                            {/* Shop Column */}
+                            <div className="flex flex-col space-y-5">
+                                <h4 className="text-[11px] font-black uppercase tracking-[0.2em] text-black/30">Shop</h4>
+                                <ul className="flex flex-col space-y-3">
+                                    {['Men', 'New Collection', 'Best Sellers'].map((link) => (
+                                        <li key={link}>
+                                            <Link href={`/${link.toLowerCase().replace(/\s+/g, '-')}`} className="text-sm font-bold text-black/60 hover:text-black transition-colors">
+                                                {link}
+                                            </Link>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
 
-                            {/* Column 2 */}
-                            <div>
-                                <h4 className="font-bold mb-6 text-sm uppercase tracking-wider">Resources</h4>
-                                <ul className="space-y-4 text-sm text-gray-500">
-                                    <li><Link href="#docs" className="hover:text-black transition-colors">Documentation</Link></li>
-                                    <li><Link href="#tutorials" className="hover:text-black transition-colors">Tutorials</Link></li>
-                                    <li><Link href="#blog" className="hover:text-black transition-colors">Blog</Link></li>
-                                    <li><Link href="#support" className="hover:text-black transition-colors">Support</Link></li>
+                            {/* Help Column */}
+                            <div className="flex flex-col space-y-5">
+                                <h4 className="text-[11px] font-black uppercase tracking-[0.2em] text-black/30">Help</h4>
+                                <ul className="flex flex-col space-y-3">
+                                    <li>
+                                        <Link href="/contact" className="text-sm font-bold text-black/60 hover:text-black transition-colors">
+                                            Contact Us
+                                        </Link>
+                                    </li>
                                 </ul>
                             </div>
-
-                            {/* Column 3 */}
-                            <div>
-                                <h4 className="font-bold mb-6 text-sm uppercase tracking-wider">Company</h4>
-                                <ul className="space-y-4 text-sm text-gray-500">
-                                    <li><Link href="#about" className="hover:text-black transition-colors">About</Link></li>
-                                    <li><Link href="#careers" className="hover:text-black transition-colors">Careers</Link></li>
-                                    <li><Link href="#contact" className="hover:text-black transition-colors">Contact</Link></li>
-                                    <li><Link href="#partners" className="hover:text-black transition-colors">Partners</Link></li>
-                                </ul>
-                            </div>
-
                         </div>
+
                     </div>
 
-                    {/* Bottom Bar */}
-                    <div className="pt-8 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-400 gap-4 relative z-10">
-                        <p>&copy; {new Date().getFullYear()} Manzo Wholesale. All rights reserved.</p>
-                        <div className="flex gap-6">
-                            <Link href="#privacy" className="hover:text-black transition-colors">Privacy Policy</Link>
-                            <Link href="#terms" className="hover:text-black transition-colors">Terms of Service</Link>
-                            <Link href="#cookies" className="hover:text-black transition-colors">Cookies Settings</Link>
+                    {/* Bottom Copyright Section */}
+                    <div className="mt-12 md:mt-18 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <p className="text-[11px] font-bold text-black/20 uppercase tracking-widest">
+                            &copy; {new Date().getFullYear()} Manzo. All rights reserved.
+                        </p>
+                        <div className="flex gap-8">
+                            <span className="text-[10px] font-black text-black/10 uppercase tracking-tighter">Premium Wholesale Manufacturing</span>
                         </div>
                     </div>
 
                 </div>
-            </div>
-
-            {/* Background Watermark (Behind the card) */}
-            <div className="absolute bottom-0 left-0 w-full flex justify-center pointer-events-none opacity-[0.1] select-none overflow-hidden pb-0">
-                <span className="text-[25vw] font-serif font-black text-white leading-none tracking-tighter translate-y-1/4">
-                    MANZO
-                </span>
             </div>
         </footer>
     );

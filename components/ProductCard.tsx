@@ -8,7 +8,6 @@ interface Product {
     id: number;
     title: string;
     category: string;
-    price: string;
     image: string;
 }
 
@@ -25,26 +24,27 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
     return (
         <motion.div
-            className="group relative flex flex-col gap-4"
+            className="group relative flex flex-col gap-4 cursor-pointer"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            whileHover={{ y: -10 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
         >
             {/* Image Container */}
-            <div className="relative aspect-[3/4] overflow-hidden rounded-[2rem] bg-[#f0f0f0]">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-[2rem] bg-[#f0f0f0] shadow-md group-hover:shadow-2xl transition-shadow duration-500">
                 <Image
                     src={product.image}
-                    alt={product.title}
+                    alt={`${product.title} - Manzo ${product.category} wholesale mens wear collection`}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
                 {/* Hover Overlay with Button */}
-                <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
                     <button
                         onClick={handleEnquire}
-                        className="bg-white text-black px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 duration-500 delay-100 shadow-xl hover:shadow-2xl"
+                        className="bg-white/90 backdrop-blur-md text-black px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 duration-500 delay-100 shadow-xl hover:shadow-2xl hover:scale-105"
                     >
                         Enquire Now
                     </button>
@@ -52,9 +52,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             </div>
 
             {/* Details */}
-            <div className="flex flex-col items-center text-center">
-                <h3 className="text-xl font-serif text-black mb-1">{product.title}</h3>
-                <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">{product.category}</p>
+            <div className="flex flex-col items-center text-center space-y-1">
+                <h3 className="text-xl font-serif text-black group-hover:text-[#d4af37] transition-colors duration-300">{product.title}</h3>
+                <p className="text-xs text-gray-500 uppercase tracking-wider font-medium">{product.category}</p>
 
             </div>
         </motion.div>
