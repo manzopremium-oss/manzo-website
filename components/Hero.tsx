@@ -216,7 +216,7 @@ const Hero = () => {
                 </div>
 
                 {/* Bottom Content: Button (Z-Index 30) */}
-                <div className="absolute inset-0 z-30 w-full h-full p-8 md:p-16 flex flex-col justify-end items-start pointer-events-none pb-12 md:pb-24">
+                <div className="absolute inset-0 z-30 w-full h-full p-8 md:p-16 flex flex-col justify-end items-start pointer-events-none pb-28 md:pb-24">
                     <div className="pointer-events-auto">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}

@@ -8,14 +8,14 @@
     "theme_color": "#444459",
     "icons": [
         {
-            "src": "/Manzo Logo White@4x.webp",
+            "src": "/lgo whi@4x.webp",
             "sizes": "512x512",
             "type": "image/webp",
             "purpose": "any maskable"
         },
         {
-            "src": "/Manzo Logo Black@4x.webp",
-            "sizes": "512x512",
+            "src": "/lgo whi@4x.webp",
+            "sizes": "192x192",
             "type": "image/webp"
         }
     ]

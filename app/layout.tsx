@@ -29,6 +29,10 @@ export const metadata: Metadata = {
     locale: "en_US",
     siteName: "Manzo",
   },
+  icons: {
+    icon: "/lgo whi@4x.webp",
+    apple: "/lgo whi@4x.webp",
+  },
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
@@ -60,7 +64,7 @@ export default function RootLayout({
               "name": "Manzo",
               "alternateName": "Manzo Wholesale",
               "url": "https://manzo.com",
-              "logo": "https://manzo.com/Manzo Logo White@4x.webp",
+              "logo": "https://manzo.com/lgo whi@4x.webp",
               "description": "Leading wholesale mens fashion manufacturers specializing in high-quality male clothing, mens wear, and modern apparel manufacturing.",
               "brand": {
                 "@type": "Brand",

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Download, X } from 'lucide-react';
+import Image from 'next/image';
 
 const PWAInstall = () => {
     const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
@@ -30,11 +31,20 @@ const PWAInstall = () => {
         const handler = (e: any) => {
             e.preventDefault();
             setDeferredPrompt(e);
-            // Show prompt after a small delay
-            setTimeout(() => setShowPrompt(true), 3000);
+            // Show prompt after a 5 second delay
+            setTimeout(() => setShowPrompt(true), 5000);
         };
 
         window.addEventListener('beforeinstallprompt', handler);
+
+        // Listen for the mobile navbar button
+        const mobileBtn = document.getElementById('pwa-install-mobile-btn');
+        if (mobileBtn) {
+            mobileBtn.onclick = (e) => {
+                e.preventDefault();
+                handleInstall();
+            };
+        }
 
         // For iOS, just show it after some time
         if (isIosDevice) {
@@ -78,8 +88,14 @@ const PWAInstall = () => {
                     </button>
 
                     <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/20">
-                            <Download className="text-[#b5c7b9]" size={24} />
+                        <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/20 overflow-hidden">
+                            <Image
+                                src="/lgo whi@4x.webp"
+                                alt="Manzo Logo"
+                                width={40}
+                                height={40}
+                                className="object-contain"
+                            />
                         </div>
                         <div className="flex-1">
                             <h3 className="text-white text-sm font-bold uppercase tracking-widest">Install Manzo</h3>

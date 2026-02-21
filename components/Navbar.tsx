@@ -129,6 +129,18 @@ const Navbar = () => {
                     >
                         Contact
                     </Link>
+
+                    {/* Mobile Install Option */}
+                    <button
+                        id="pwa-install-mobile-btn"
+                        className="flex items-center gap-3 px-8 py-3 rounded-full border border-white/20 text-white/70 hover:text-white transition-all bg-white/5"
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        <span className="text-[10px] font-black uppercase tracking-[0.2em]">Install App</span>
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                    </button>
                 </div>
             )}
         </motion.nav>
