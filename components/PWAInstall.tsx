@@ -102,7 +102,7 @@ const PWAInstall = () => {
                     <div className="flex items-start gap-4">
                         <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-white/20 to-white/5 flex items-center justify-center border border-white/20 overflow-hidden shadow-inner">
                             <Image
-                                src="/logo-white.webp"
+                                src="/logo-black.webp"
                                 alt="Manzo Logo"
                                 width={45}
                                 height={45}
