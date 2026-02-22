@@ -9,8 +9,8 @@ import Link from 'next/link';
 const Footer = ({ className = "bg-transparent" }: { className?: string }) => {
     return (
         <footer className={`${className} pt-10 md:pt-16 pb-0 relative overflow-hidden`}>
-            <div className="container mx-auto relative z-10">
-                <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-10 lg:p-12 w-full text-black relative shadow-2xl">
+            <div className="container mx-auto px-4 md:px-0">
+                <div className="bg-white rounded-t-[2.5rem] md:rounded-t-[3.5rem] p-8 md:p-12 lg:p-16 text-black relative shadow-[0_-10px_40px_rgba(0,0,0,0.1)] mx-2 md:mx-6 lg:mx-8">
 
                     {/* Top Section */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 md:gap-16 lg:gap-8 relative z-10">
@@ -18,12 +18,12 @@ const Footer = ({ className = "bg-transparent" }: { className?: string }) => {
                         {/* Brand Column */}
                         <div className="lg:col-span-5 flex flex-col items-start">
                             <Link href="/" className="flex items-center gap-2 mb-6">
-                                <div className="relative h-8 w-32 translate-x-[-4px]">
+                                <div className="relative h-7 w-28 translate-x-[-4px]">
                                     <Image
-                                        src="/Manzo Logo White@4x.webp"
+                                        src="/logo-black.webp"
                                         alt="Manzo"
                                         fill
-                                        className="object-contain filter invert"
+                                        className="object-contain"
                                     />
                                 </div>
                             </Link>
