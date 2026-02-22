@@ -8,15 +8,15 @@
     "theme_color": "#444459",
     "icons": [
         {
-            "src": "/logo-black.webp",
-            "sizes": "192x192 512x512",
-            "type": "image/webp",
+            "src": "/app-icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
             "purpose": "any"
         },
         {
-            "src": "/logo-black.webp",
-            "sizes": "192x192 512x512",
-            "type": "image/webp",
+            "src": "/app-icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
             "purpose": "maskable"
         }
     ]

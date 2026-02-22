@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     siteName: "Manzo",
   },
   icons: {
-    icon: "/logo-black.webp",
-    apple: "/logo-black.webp",
+    icon: "/app-icon-192.png",
+    apple: "/apple-icon.png",
   },
   manifest: "/manifest.json",
   appleWebApp: {

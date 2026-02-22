@@ -1,8 +1,10 @@
-const CACHE_NAME = 'manzo-v2';
+const CACHE_NAME = 'manzo-v3';
 const ASSETS_TO_CACHE = [
     '/',
     '/manifest.json',
-    '/logo-black.webp'
+    '/app-icon-192.png',
+    '/app-icon-512.png',
+    '/apple-icon.png'
 ];
 
 self.addEventListener('install', (event) => {
