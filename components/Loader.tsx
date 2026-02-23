@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -9,6 +9,11 @@ interface LoaderProps {
 }
 
 const Loader: React.FC<LoaderProps> = ({ onLoadingComplete }) => {
+    useEffect(() => {
+        const timer = setTimeout(onLoadingComplete, 3000);
+        return () => clearTimeout(timer);
+    }, [onLoadingComplete]);
+
     return (
         <motion.div
             className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#fafafa]"
@@ -53,9 +58,6 @@ const Loader: React.FC<LoaderProps> = ({ onLoadingComplete }) => {
                             duration: 0.8,
                             ease: "easeOut",
                             delay: 1
-                        }}
-                        onAnimationComplete={() => {
-                            setTimeout(onLoadingComplete, 1200);
                         }}
                     >
                         Premium Menswear
