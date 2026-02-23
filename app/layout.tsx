@@ -74,15 +74,15 @@ export default function RootLayout({
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Wholesale District",
-                "addressLocality": "Cairo",
-                "addressRegion": "Cairo",
-                "postalCode": "12345",
-                "addressCountry": "EG"
+                "addressLocality": "Surat",
+                "addressRegion": "Gujarat",
+                "postalCode": "395003",
+                "addressCountry": "IN"
               },
-              "keywords": "wholesale mens fashion manufacturers, wholesale male clothing, wholesale mens wear, mens wholesale clothing, wholesale mens fashion, Egyptian clothing manufacturer, premium mens apparel",
+              "keywords": "wholesale mens fashion manufacturers, wholesale male clothing, wholesale mens wear, mens wholesale clothing, wholesale mens fashion, Indian clothing manufacturer, premium mens apparel",
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+20-123456789",
+                "telephone": "+91-9645675565",
                 "contactType": "Sales"
               },
               "sameAs": [
