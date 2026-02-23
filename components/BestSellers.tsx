@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import Link from 'next/link';
 import ProductCard from './ProductCard';
 
@@ -13,7 +13,7 @@ const BestSellers = ({ titleTag: TitleTag = "h2" }: { titleTag?: "h1" | "h2" }) 
         { id: 4, title: "Boxy Fit Shirt", category: "MEN", image: "/link--block-5.jpg.jpeg" }
     ];
 
-    const containerVariants = {
+    const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -24,7 +24,7 @@ const BestSellers = ({ titleTag: TitleTag = "h2" }: { titleTag?: "h1" | "h2" }) 
         }
     };
 
-    const itemVariants = {
+    const itemVariants: Variants = {
         hidden: { opacity: 0, y: 30 },
         visible: {
             opacity: 1,
