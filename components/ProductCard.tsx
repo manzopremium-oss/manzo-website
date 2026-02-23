@@ -17,7 +17,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     const handleEnquire = () => {
-        const phoneNumber = "919876543210";
+        const phoneNumber = "919645675565";
         const message = encodeURIComponent(`Hi Manzo, I am interested in ${product.title}. Please share more details.`);
         window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
     };

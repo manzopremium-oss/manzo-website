@@ -11,7 +11,6 @@ const Navbar = () => {
     const isHomePage = pathname === '/';
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isHidden, setIsHidden] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -20,17 +19,6 @@ const Navbar = () => {
                 setIsScrolled(true);
             } else {
                 setIsScrolled(false);
-            }
-
-            // Hide navbar when reaching the bottom (Footer section)
-            const scrollPosition = window.scrollY + window.innerHeight;
-            const docHeight = document.documentElement.scrollHeight;
-            const footerThreshold = 400; // Adjust based on footer height
-
-            if (scrollPosition > docHeight - footerThreshold) {
-                setIsHidden(true);
-            } else {
-                setIsHidden(false);
             }
         };
 
@@ -47,8 +35,8 @@ const Navbar = () => {
         <motion.nav
             initial={{ y: 0, opacity: 1 }}
             animate={{
-                y: isHidden ? -100 : 0,
-                opacity: isHidden ? 0 : 1
+                y: 0,
+                opacity: 1
             }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
             className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 font-sans transition-all duration-300 ${navContainerClass}`}

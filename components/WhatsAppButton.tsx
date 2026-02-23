@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const WhatsAppButton = () => {
     // WhatsApp link
-    const whatsappUrl = "https://wa.me/20123456789";
+    const whatsappUrl = "https://wa.me/919645675565";
 
     return (
         <motion.div
