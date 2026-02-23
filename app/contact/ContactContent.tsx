@@ -9,7 +9,7 @@ export default function ContactContent() {
     return (
         <main className="flex flex-col min-h-screen bg-white">
             <Navbar />
-            <div className="pt-40 pb-24 flex-grow container mx-auto px-6">
+            <div className="pt-28 md:pt-40 pb-24 flex-grow container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}

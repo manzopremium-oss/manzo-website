@@ -19,14 +19,14 @@ const MenSection = () => {
             </video>
 
             {/* Content Overlay */}
-            <div className="relative z-10 w-full h-full flex flex-col justify-center items-center px-6 text-center pt-24">
+            <div className="relative z-10 w-full h-full flex flex-col justify-center items-center px-4 md:px-6 text-center pt-24">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                     className="max-w-4xl"
                 >
-                    <h1 className="text-6xl md:text-8xl font-black text-white uppercase tracking-tighter mb-6 drop-shadow-2xl">
+                    <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white uppercase tracking-tighter mb-6 drop-shadow-2xl">
                         Wholesale Mens Fashion
                     </h1>
                     <p className="text-lg md:text-xl text-white/80 font-medium tracking-wide mb-10 max-w-2xl mx-auto drop-shadow-lg">

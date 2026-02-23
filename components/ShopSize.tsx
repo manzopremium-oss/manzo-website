@@ -12,7 +12,7 @@ const ShopSize = () => {
                 Shop Your Size
             </h2>
 
-            <div className="w-full h-[400px] md:h-[500px] bg-[#87CEEB] relative overflow-hidden">
+            <div className="w-full h-[300px] md:h-[500px] bg-[#87CEEB] relative overflow-hidden">
 
                 {/* Background Image */}
                 <motion.div
@@ -36,7 +36,7 @@ const ShopSize = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="absolute inset-0 w-full h-full flex flex-col justify-center items-end pr-10 md:pr-20 bg-black/10"
+                    className="absolute inset-0 w-full h-full flex flex-col justify-center items-center md:items-end px-6 md:pr-20 bg-black/10"
                 >
                     <div className="text-right">
                         <h3 className="text-4xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg">
