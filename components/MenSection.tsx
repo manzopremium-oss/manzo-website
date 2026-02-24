@@ -7,16 +7,12 @@ const MenSection = () => {
     return (
         <section className="relative w-full h-[90vh] overflow-hidden bg-black">
             {/* Video Background */}
-            <video
-                autoPlay
-                loop
-                muted
-                playsInline
+            {/* Background Image */}
+            <img
+                src="/234.jpg.jpeg"
+                alt="Wholesale Mens Fashion Background"
                 className="absolute inset-0 w-full h-full object-cover object-[center_15%] opacity-60"
-            >
-                <source src="/0219.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
+            />
 
             {/* Content Overlay */}
             <div className="relative z-10 w-full h-full flex flex-col justify-center items-center px-4 md:px-6 text-center pt-24">
