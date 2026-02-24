@@ -11,7 +11,8 @@ const Hero = () => {
     const slides = [
         {
             id: 1,
-            bg: "/bnr-1-ss.jpg.jpeg",
+            bg: "/234.jpg.jpeg",
+            tabletBg: "/bnr-1-ss.jpg.jpeg",
             mobileBg: "/photo_2026-02-20_20-58-27.jpg",
             fg: "/cherkkan (1).png",
             title: "",
@@ -91,12 +92,13 @@ const Hero = () => {
                 >
                     {/* Layer 1: Background Image */}
                     <div className="absolute inset-0 z-0 overflow-hidden">
+                        {/* Large Desktop (xl+) Background */}
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={`bg-${currentSlide}`}
                                 className={
                                     currentSlide === 0
-                                        ? "hidden lg:block w-full h-full relative"
+                                        ? "hidden xl:block w-full h-full relative"
                                         : (slides[currentSlide].bgClassName || "hidden md:block w-full h-full relative")
                                 }
                                 initial={{ opacity: 0 }}
@@ -114,7 +116,29 @@ const Hero = () => {
                             </motion.div>
                         </AnimatePresence>
 
-                        {/* Mobile/Tablet Background (Dynamic) */}
+                        {/* Nest Hub / Tablet Desktop (lg to xl) Background - Slide 1 only */}
+                        {currentSlide === 0 && (slides[currentSlide] as typeof slides[0] & { tabletBg?: string }).tabletBg && (
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={`bg-tablet-${currentSlide}`}
+                                    className="hidden lg:block xl:hidden w-full h-full relative"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                                >
+                                    <Image
+                                        src={(slides[currentSlide] as typeof slides[0] & { tabletBg?: string }).tabletBg!}
+                                        alt="Background"
+                                        fill
+                                        className="object-cover object-top"
+                                        priority
+                                    />
+                                </motion.div>
+                            </AnimatePresence>
+                        )}
+
+                        {/* Mobile Background (Dynamic) */}
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={`bg-mobile-${currentSlide}`}
@@ -206,7 +230,7 @@ const Hero = () => {
                                     transition={{ duration: 0.8, ease: "easeOut" }}
                                     className="mb-6 hidden md:block"
                                 >
-                                    <p className="text-gray-400 font-medium text-[7px] md:text-[8px] leading-relaxed tracking-[0.2em] font-sans drop-shadow-lg opacity-80">
+                                    <p className="text-gray-400 font-medium text-[5px] md:text-[6px] leading-relaxed tracking-[0.2em] font-sans drop-shadow-lg opacity-80">
                                         {slides[currentSlide].description}
                                     </p>
                                 </motion.div>
