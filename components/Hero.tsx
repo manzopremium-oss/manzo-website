@@ -203,7 +203,7 @@ const Hero = () => {
                 </div>
 
                 {/* Top Content: Description (Z-Index 30) */}
-                <div className="absolute inset-0 z-30 w-full h-full p-4 md:p-6 lg:p-8 flex flex-col justify-start items-start pointer-events-none pt-0 md:pt-1">
+                <div className="absolute inset-0 z-30 w-full h-full p-4 md:p-6 lg:p-8 flex flex-col justify-start items-start pointer-events-none pt-48 md:pt-80">
                     <div className="max-w-md pointer-events-auto text-center flex flex-col items-center">
                         {/* Slide Title */}
                         {slides[currentSlide].title && (
@@ -230,7 +230,7 @@ const Hero = () => {
                                     transition={{ duration: 0.8, ease: "easeOut" }}
                                     className="mb-6 hidden md:block"
                                 >
-                                    <p className="text-gray-400 font-medium text-[5px] md:text-[6px] leading-relaxed tracking-[0.2em] font-sans drop-shadow-lg opacity-80">
+                                    <p className="text-gray-400 font-medium text-[9px] md:text-[11px] leading-relaxed tracking-[0.15em] font-sans drop-shadow-lg opacity-85">
                                         {slides[currentSlide].description}
                                     </p>
                                 </motion.div>
