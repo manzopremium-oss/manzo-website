@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://manzo.com/sitemap.xml
+Sitemap: https://www.manzoclothing.com/sitemap.xml

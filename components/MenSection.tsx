@@ -7,6 +7,7 @@ const MenSection = () => {
     return (
         <section className="relative w-full h-[90vh] overflow-hidden bg-black">
             {/* Video Background */}
+            {/* Video Background */}
             <video
                 autoPlay
                 loop

@@ -90,28 +90,28 @@ const PWAInstall = () => {
                     initial={{ opacity: 0, y: 50, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 30, scale: 0.95 }}
-                    className="fixed bottom-28 left-4 right-4 md:left-auto md:right-32 md:w-80 z-[110] p-5 bg-[#1c1c1c]/95 rounded-3xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-2xl"
+                    className="fixed bottom-28 left-4 right-4 md:left-auto md:right-32 md:w-72 z-[110] p-4 bg-[#1c1c1c]/95 rounded-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-2xl"
                 >
                     <button
                         onClick={() => setShowPrompt(false)}
-                        className="absolute top-3 right-3 text-white/40 hover:text-white transition-colors"
+                        className="absolute top-2.5 right-2.5 text-white/40 hover:text-white transition-colors"
                     >
-                        <X size={18} />
+                        <X size={16} />
                     </button>
 
-                    <div className="flex items-start gap-4">
-                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-white/20 to-white/5 flex items-center justify-center border border-white/20 overflow-hidden shadow-inner">
+                    <div className="flex items-start gap-3">
+                        <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-white/20 to-white/5 flex items-center justify-center border border-white/20 overflow-hidden shadow-inner">
                             <Image
                                 src="/logo-black.webp"
                                 alt="Manzo Logo"
-                                width={45}
-                                height={45}
+                                width={36}
+                                height={36}
                                 className="object-contain filter drop-shadow-md"
                             />
                         </div>
                         <div className="flex-1 pt-0.5">
-                            <h3 className="text-white text-sm font-black uppercase tracking-[0.15em]">Manzo Official</h3>
-                            <p className="text-white/70 text-[11px] leading-relaxed mt-1.5 font-medium">
+                            <h3 className="text-white text-xs font-black uppercase tracking-[0.12em]">Manzo Official</h3>
+                            <p className="text-white/70 text-[10px] leading-snug mt-1 font-medium">
                                 {isIos
                                     ? "Install Manzo for the fastest premium shopping experience. Tap 'Share' then 'Add to Home Screen'."
                                     : "Get the Manzo App for exclusive drops and a seamless premium experience."}
@@ -119,10 +119,10 @@ const PWAInstall = () => {
                         </div>
                     </div>
 
-                    <div className="mt-5 flex gap-2">
+                    <div className="mt-4 flex gap-2">
                         <button
                             onClick={handleInstall}
-                            className={`flex-1 py-3 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] transition-all 
+                            className={`flex-1 py-2.5 rounded-xl text-[9px] font-black uppercase tracking-[0.15em] transition-all 
                 ${isIos
                                     ? 'bg-white/10 text-white/50 border border-white/10'
                                     : 'bg-white text-black hover:bg-[#d4af37] hover:text-white active:scale-95 shadow-lg'}`}
@@ -132,7 +132,7 @@ const PWAInstall = () => {
                         {isIos && (
                             <button
                                 onClick={() => setShowPrompt(false)}
-                                className="px-4 py-3 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] bg-white/5 text-white/70 border border-white/10 hover:bg-white/10"
+                                className="px-3 py-2.5 rounded-xl text-[9px] font-black uppercase tracking-[0.15em] bg-white/5 text-white/70 border border-white/10 hover:bg-white/10"
                             >
                                 Got it
                             </button>

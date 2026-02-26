@@ -13,6 +13,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.manzoclothing.com"),
   title: "Manzo - Leading Wholesale Mens Fashion Manufacturers",
   description:
     "Manzo is a premier wholesale mens fashion manufacturer, providing high-quality wholesale male clothing and mens wear. Your trusted partner for mens wholesale clothing and modern fashion.",
@@ -22,14 +23,46 @@ export const metadata: Metadata = {
     "wholesale mens wear",
     "mens wholesale clothing",
     "wholesale mens fashion",
+    "Manzo Fashion India",
+    "premium mens apparel",
   ],
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "Manzo - Premium Wholesale Mens Fashion",
+    title: "Manzo - Leading Wholesale Mens Fashion Manufacturers",
     description:
       "Premium wholesale mens fashion for retailers. High-quality male clothing and mens wear at wholesale prices.",
-    type: "website",
-    locale: "en_US",
+    url: "https://www.manzoclothing.com",
     siteName: "Manzo",
+    images: [
+      {
+        url: "/234.jpg.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Manzo Wholesale Mens Fashion",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Manzo - Leading Wholesale Mens Fashion Manufacturers",
+    description:
+      "Premium wholesale mens fashion for retailers. High-quality male clothing and mens wear at wholesale prices.",
+    images: ["/234.jpg.jpeg"],
   },
   icons: {
     icon: "/app-icon-192.png",
@@ -80,10 +113,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ClothingStore",
-              name: "Manzo",
-              alternateName: "Manzo Wholesale",
-              url: "https://manzo.com",
-              logo: "https://manzo.com/logo-black.webp",
+              name: "Manzo Official",
+              alternateName: "Manzo Wholesale India",
+              url: "https://www.manzoclothing.com",
+              logo: "https://www.manzoclothing.com/logo-black.webp",
               description:
                 "Leading wholesale mens fashion manufacturers specializing in high-quality male clothing, mens wear, and modern apparel manufacturing.",
               brand: {
