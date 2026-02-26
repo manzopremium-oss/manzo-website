@@ -125,10 +125,10 @@ export default function RootLayout({
               },
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "Wholesale District",
-                addressLocality: "Surat",
-                addressRegion: "Gujarat",
-                postalCode: "395003",
+                streetAddress: "krps illam, 258, Bommanahalli",
+                addressLocality: "Bengaluru",
+                addressRegion: "Karnataka",
+                postalCode: "560114",
                 addressCountry: "IN",
               },
               keywords:
