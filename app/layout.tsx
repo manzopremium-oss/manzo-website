@@ -14,17 +14,19 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "Manzo - Leading Wholesale Mens Fashion Manufacturers",
-  description: "Manzo is a premier wholesale mens fashion manufacturer, providing high-quality wholesale male clothing and mens wear. Your trusted partner for mens wholesale clothing and modern fashion.",
+  description:
+    "Manzo is a premier wholesale mens fashion manufacturer, providing high-quality wholesale male clothing and mens wear. Your trusted partner for mens wholesale clothing and modern fashion.",
   keywords: [
     "wholesale mens fashion manufacturers",
     "wholesale male clothing",
     "wholesale mens wear",
     "mens wholesale clothing",
-    "wholesale mens fashion"
+    "wholesale mens fashion",
   ],
   openGraph: {
     title: "Manzo - Premium Wholesale Mens Fashion",
-    description: "Premium wholesale mens fashion for retailers. High-quality male clothing and mens wear at wholesale prices.",
+    description:
+      "Premium wholesale mens fashion for retailers. High-quality male clothing and mens wear at wholesale prices.",
     type: "website",
     locale: "en_US",
     siteName: "Manzo",
@@ -41,6 +43,7 @@ export const metadata: Metadata = {
   },
 };
 
+import Script from "next/script";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PWAInstall from "@/components/PWAInstall";
 import SmoothScrolling from "@/components/SmoothScrolling";
@@ -52,6 +55,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-ETQLM551E6"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-ETQLM551E6');
+          `}
+        </Script>
+      </head>
       <body
         className={`${inter.variable} ${playfair.variable} antialiased`}
         suppressHydrationWarning
@@ -62,38 +80,36 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ClothingStore",
-              "name": "Manzo",
-              "alternateName": "Manzo Wholesale",
-              "url": "https://manzo.com",
-              "logo": "https://manzo.com/logo-black.webp",
-              "description": "Leading wholesale mens fashion manufacturers specializing in high-quality male clothing, mens wear, and modern apparel manufacturing.",
-              "brand": {
+              name: "Manzo",
+              alternateName: "Manzo Wholesale",
+              url: "https://manzo.com",
+              logo: "https://manzo.com/logo-black.webp",
+              description:
+                "Leading wholesale mens fashion manufacturers specializing in high-quality male clothing, mens wear, and modern apparel manufacturing.",
+              brand: {
                 "@type": "Brand",
-                "name": "Manzo"
+                name: "Manzo",
               },
-              "address": {
+              address: {
                 "@type": "PostalAddress",
-                "streetAddress": "Wholesale District",
-                "addressLocality": "Surat",
-                "addressRegion": "Gujarat",
-                "postalCode": "395003",
-                "addressCountry": "IN"
+                streetAddress: "Wholesale District",
+                addressLocality: "Surat",
+                addressRegion: "Gujarat",
+                postalCode: "395003",
+                addressCountry: "IN",
               },
-              "keywords": "wholesale mens fashion manufacturers, wholesale male clothing, wholesale mens wear, mens wholesale clothing, wholesale mens fashion, Indian clothing manufacturer, premium mens apparel",
-              "contactPoint": {
+              keywords:
+                "wholesale mens fashion manufacturers, wholesale male clothing, wholesale mens wear, mens wholesale clothing, wholesale mens fashion, Indian clothing manufacturer, premium mens apparel",
+              contactPoint: {
                 "@type": "ContactPoint",
-                "telephone": "+91-9645675565",
-                "contactType": "Sales"
+                telephone: "+91-9645675565",
+                contactType: "Sales",
               },
-              "sameAs": [
-                "https://www.instagram.com/manzo_clothing_india_/"
-              ]
-            })
+              sameAs: ["https://www.instagram.com/manzo_clothing_india_/"],
+            }),
           }}
         />
-        <SmoothScrolling>
-          {children}
-        </SmoothScrolling>
+        <SmoothScrolling>{children}</SmoothScrolling>
         <WhatsAppButton />
         <PWAInstall />
       </body>
