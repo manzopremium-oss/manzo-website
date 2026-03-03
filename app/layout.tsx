@@ -1,22 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.manzoclothing.com"),
   title: {
-    default: "Manzo Clothing - Leading Wholesale Mens Fashion Manufacturers India",
-    template: "%s | Manzo Clothing",
+    default: "Manzo | Leading Wholesale Mens Fashion Manufacturers India",
+    template: "%s | Manzo",
   },
   description:
     "Manzo Clothing is a premier wholesale mens fashion manufacturer based in Bengaluru, India. We provide high quality wholesale male clothing, mens wear, and modern apparel. Your trusted partner for mens wholesale clothing.",
@@ -53,11 +42,12 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Manzo Clothing - Leading Wholesale Mens Fashion Manufacturers India",
+    title:
+      "Manzo Clothing - Leading Wholesale Mens Fashion Manufacturers India",
     description:
       "Manzo Clothing offers premium wholesale mens fashion for retailers. High-quality male clothing and mens wear at wholesale prices. Based in Bengaluru, India.",
     url: "https://www.manzoclothing.com",
-    siteName: "Manzo Clothing",
+    siteName: "Manzo",
     images: [
       {
         url: "/234.jpg.jpeg",
@@ -71,7 +61,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Manzo Clothing - Leading Wholesale Mens Fashion Manufacturers India",
+    title:
+      "Manzo Clothing - Leading Wholesale Mens Fashion Manufacturers India",
     description:
       "Manzo Clothing offers premium wholesale mens fashion for retailers. High-quality male clothing and mens wear at wholesale prices.",
     images: ["/234.jpg.jpeg"],
@@ -86,11 +77,11 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Manzo Clothing",
+    title: "Manzo",
   },
   // Helps Google understand the correct brand name
   other: {
-    "application-name": "Manzo Clothing",
+    "application-name": "Manzo",
   },
 };
 
@@ -104,7 +95,13 @@ const organizationSchema = {
   "@type": ["Organization", "LocalBusiness", "ClothingStore"],
   "@id": "https://www.manzoclothing.com/#organization",
   name: "Manzo Clothing",
-  alternateName: ["Manzo", "manzo", "Manzo Clothing India", "Manzo Wholesale India", "Manzo Fashion India"],
+  alternateName: [
+    "Manzo",
+    "manzo",
+    "Manzo Clothing India",
+    "Manzo Wholesale India",
+    "Manzo Fashion India",
+  ],
   legalName: "Manzo Clothing",
   url: "https://www.manzoclothing.com",
   logo: {
@@ -167,8 +164,18 @@ const organizationSchema = {
         itemOffered: {
           "@type": "Product",
           name: "Wholesale Mens Fashion",
-          description: "Premium wholesale mens clothing and apparel for retailers",
+          image: "https://www.manzoclothing.com/234.jpg.jpeg",
+          description:
+            "Premium wholesale mens clothing and apparel for retailers",
           brand: { "@type": "Brand", name: "Manzo Clothing" },
+          offers: {
+            "@type": "AggregateOffer",
+            lowPrice: 100,
+            highPrice: 10000,
+            priceCurrency: "INR",
+            availability: "https://schema.org/InStock",
+            offerCount: 100,
+          },
         },
       },
     ],
@@ -179,10 +186,11 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": "https://www.manzoclothing.com/#website",
-  name: "Manzo Clothing",
-  alternateName: "Manzo Clothing",
+  name: "Manzo",
+  alternateName: ["Manzo Clothing", "Manzo Wholesale"],
   url: "https://www.manzoclothing.com",
-  description: "Manzo Clothing - Leading Wholesale Mens Fashion Manufacturers in India",
+  description:
+    "Manzo Clothing - Leading Wholesale Mens Fashion Manufacturers in India",
   publisher: {
     "@id": "https://www.manzoclothing.com/#organization",
   },
@@ -205,7 +213,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Canonical brand name meta for Google */}
-        <meta name="application-name" content="Manzo Clothing" />
+        <meta name="application-name" content="Manzo" />
         <meta name="author" content="Manzo Clothing" />
         <meta name="copyright" content="Manzo Clothing" />
         <meta property="og:brand" content="Manzo Clothing" />
@@ -227,14 +235,13 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body
-        className={`${inter.variable} ${playfair.variable} antialiased`}
-        suppressHydrationWarning
-      >
+      <body className="antialiased" suppressHydrationWarning>
         {/* Organization Schema - strengthens brand identity for Google */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
         />
         {/* Website Schema */}
         <script
