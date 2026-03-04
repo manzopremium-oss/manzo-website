@@ -78,6 +78,7 @@ const ProductList = () => {
           className="mb-16 text-center"
         >
           <h1 className="text-4xl md:text-7xl font-serif text-black mb-4 uppercase tracking-tighter">
+            <span className="sr-only">Manzo Clothing - </span>
             Our Collection
           </h1>
           <div className="w-24 h-1 bg-[#d4af37] mx-auto mt-4" />

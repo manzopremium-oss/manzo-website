@@ -65,12 +65,13 @@ const BestSellers = ({
         >
           <div className="max-w-2xl text-center md:text-left">
             <TitleTag className="text-4xl md:text-5xl font-serif text-black mb-4">
+              <span className="sr-only">Manzo Clothing - </span>
               Best Sellers
             </TitleTag>
             <p className="text-gray-500 text-sm md:text-base leading-relaxed">
-              Discover our most wanted pieces. Curated premium mens wholesale
-              clothing, wholesale male clothing, and wholesale mens wear
-              designed for the modern lifestyle.
+              Discover Manzo Clothing's most wanted pieces. Curated premium mens
+              wholesale clothing, wholesale male clothing, and wholesale mens
+              wear designed for the modern lifestyle.
             </p>
           </div>
         </motion.div>

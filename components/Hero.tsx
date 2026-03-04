@@ -195,6 +195,9 @@ const Hero = () => {
           {/* Watermark Text (Now z-10 to be visible above BG) */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10 mix-blend-overlay">
             <h1 className="text-[15vw] md:text-[22vw] font-black text-white/10 tracking-tighter leading-none select-none">
+              <span className="sr-only">
+                Manzo Clothing - Premium Wholesale Men's Fashion Brand.{" "}
+              </span>
               MANZO
             </h1>
           </div>

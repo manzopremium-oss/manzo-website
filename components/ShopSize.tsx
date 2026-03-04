@@ -1,56 +1,54 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
+import React from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 const ShopSize = () => {
-    return (
-        <section className="bg-white pt-16 pb-0 flex flex-col items-center">
+  return (
+    <section className="bg-white pt-16 pb-0 flex flex-col items-center">
+      <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-8 uppercase tracking-widest">
+        <span className="sr-only">Manzo Clothing - </span>
+        Shop Your Size
+      </h2>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-8 uppercase tracking-widest">
-                Shop Your Size
-            </h2>
+      <div className="w-full h-[300px] md:h-[500px] bg-[#87CEEB] relative overflow-hidden">
+        {/* Background Image */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="absolute inset-0 w-full h-full"
+        >
+          <Image
+            src="/Gemini_Generated_Image_iui7tfiui7tfiui7.png"
+            alt="Models showcasing the latest Manzo wholesale male clothing collections"
+            fill
+            className="object-cover object-top"
+          />
+        </motion.div>
 
-            <div className="w-full h-[300px] md:h-[500px] bg-[#87CEEB] relative overflow-hidden">
-
-                {/* Background Image */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="absolute inset-0 w-full h-full"
-                >
-                    <Image
-                        src="/Gemini_Generated_Image_iui7tfiui7tfiui7.png"
-                        alt="Models showcasing the latest Manzo wholesale male clothing collections"
-                        fill
-                        className="object-cover object-top"
-                    />
-                </motion.div>
-
-                {/* Content Overlay */}
-                <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="absolute inset-0 w-full h-full flex flex-col justify-center items-center md:items-end px-6 md:pr-20 bg-black/10"
-                >
-                    <div className="text-right">
-                        <h3 className="text-4xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg">
-                            Last chance!
-                        </h3>
-                        <p className="text-lg md:text-xl text-white font-medium tracking-wide drop-shadow-md">
-                            Last few sizes left
-                        </p>
-                    </div>
-                </motion.div>
-
-            </div>
-        </section>
-    );
+        {/* Content Overlay */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="absolute inset-0 w-full h-full flex flex-col justify-center items-center md:items-end px-6 md:pr-20 bg-black/10"
+        >
+          <div className="text-right">
+            <h3 className="text-4xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg">
+              Last chance!
+            </h3>
+            <p className="text-lg md:text-xl text-white font-medium tracking-wide drop-shadow-md">
+              Last few sizes left
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
 };
 
 export default ShopSize;

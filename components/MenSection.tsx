@@ -29,6 +29,7 @@ const MenSection = () => {
           className="max-w-4xl"
         >
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white uppercase tracking-tighter mb-6 drop-shadow-2xl">
+            <span className="sr-only">Manzo Clothing - </span>
             Wholesale Mens Fashion
           </h1>
           <p className="text-lg md:text-xl text-white/80 font-medium tracking-wide mb-10 max-w-2xl mx-auto drop-shadow-lg">

@@ -4,8 +4,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.manzoclothing.com"),
   title: {
-    default: "Manzo | Leading Wholesale Mens Fashion Manufacturers India",
-    template: "%s | Manzo",
+    default:
+      "Manzo Clothing | Leading Wholesale Mens Fashion Manufacturers India",
+    template: "%s | Manzo Clothing",
   },
   description:
     "Manzo Clothing is a premier wholesale mens fashion manufacturer based in Bengaluru, India. We provide high quality wholesale male clothing, mens wear, and modern apparel. Your trusted partner for mens wholesale clothing.",
@@ -81,7 +82,7 @@ export const metadata: Metadata = {
   },
   // Helps Google understand the correct brand name
   other: {
-    "application-name": "Manzo",
+    "application-name": "Manzo Clothing",
   },
 };
 
@@ -186,8 +187,8 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": "https://www.manzoclothing.com/#website",
-  name: "Manzo",
-  alternateName: ["Manzo Clothing", "Manzo Wholesale"],
+  name: "Manzo Clothing",
+  alternateName: ["Manzo Clothing", "Manzo Wholesale", "Manzo"],
   url: "https://www.manzoclothing.com",
   description:
     "Manzo Clothing - Leading Wholesale Mens Fashion Manufacturers in India",
@@ -213,7 +214,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Canonical brand name meta for Google */}
-        <meta name="application-name" content="Manzo" />
+        <meta name="application-name" content="Manzo Clothing" />
         <meta name="author" content="Manzo Clothing" />
         <meta name="copyright" content="Manzo Clothing" />
         <meta property="og:brand" content="Manzo Clothing" />
