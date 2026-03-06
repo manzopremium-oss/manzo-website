@@ -2,60 +2,11 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { products } from "@/lib/products";
 import ProductCard from "./ProductCard";
 
 const ProductList = () => {
-  // Static mock data for products
-  const products = [
-    {
-      id: 1,
-      title: "Classic White Shirt",
-      category: "MEN",
-      image: "/link-block-1.jpg.jpeg",
-    },
-    {
-      id: 2,
-      title: "Slim Fit Pant",
-      category: "MEN",
-      image: "/link-block-2.jpg.jpeg",
-    },
-    {
-      id: 3,
-      title: "Premium Hoody",
-      category: "MEN",
-      image: "/link--block-3.jpg.jpeg",
-    },
-    {
-      id: 4,
-      title: "Boxy Fit Shirt",
-      category: "MEN",
-      image: "/link--block-5.jpg.jpeg",
-    },
-    {
-      id: 5,
-      title: "Modern Jacket",
-      category: "MEN",
-      image: "/link--block-4.jpg (1).jpeg",
-    },
-    {
-      id: 6,
-      title: "Oversized Tee",
-      category: "MEN",
-      image: "/bnr-1-ss.jpg.jpeg",
-    },
-    {
-      id: 7,
-      title: "Denim Jacket",
-      category: "MEN",
-      image: "/Take an Official Look at AMBUSH x Levi's Denim___.jpeg",
-    },
-    {
-      id: 8,
-      title: "Winter Coat",
-      category: "MEN",
-      image: "/men's fashion_old money style_mans style_ mans outfits.jpeg",
-    },
-  ];
+  // Use global products data
 
   const containerVariants = {
     hidden: { opacity: 0 },

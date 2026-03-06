@@ -3,6 +3,7 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
+import { products as allProducts } from "@/lib/products";
 import ProductCard from "./ProductCard";
 
 const BestSellers = ({
@@ -10,22 +11,7 @@ const BestSellers = ({
 }: {
   titleTag?: "h1" | "h2";
 }) => {
-  const products = [
-    { id: 1, title: "Shirt", category: "MEN", image: "/link-block-1.jpg.jpeg" },
-    { id: 2, title: "Pant", category: "MEN", image: "/link-block-2.jpg.jpeg" },
-    {
-      id: 3,
-      title: "Hoody",
-      category: "MEN",
-      image: "/link--block-3.jpg.jpeg",
-    },
-    {
-      id: 4,
-      title: "Boxy Fit Shirt",
-      category: "MEN",
-      image: "/link--block-5.jpg.jpeg",
-    },
-  ];
+  const products = allProducts.slice(0, 4);
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
