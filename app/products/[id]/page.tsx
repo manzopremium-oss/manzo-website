@@ -36,28 +36,6 @@ export default function ProductDetailPage({
 
       <div className="flex-grow pt-32 pb-24">
         <div className="container mx-auto px-6">
-          {/* Breadcrumbs */}
-          <nav className="mb-12">
-            <ol className="flex items-center space-x-2 text-xs uppercase tracking-widest font-bold text-gray-400">
-              <li>
-                <Link href="/" className="hover:text-black transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>/</li>
-              <li>
-                <Link
-                  href="/products"
-                  className="hover:text-black transition-colors"
-                >
-                  Collection
-                </Link>
-              </li>
-              <li>/</li>
-              <li className="text-black">{product.title}</li>
-            </ol>
-          </nav>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 items-start">
             {/* Product Image Section */}
             <motion.div
