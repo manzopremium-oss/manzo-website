@@ -17,18 +17,18 @@ const Hero = () => {
   const slides = [
     {
       id: 1,
-      bg: "/234.jpg.jpeg",
-      tabletBg: "/bnr-1-ss.jpg.jpeg",
-      mobileBg: "/photo_2026-02-20_20-58-27.jpg",
-      fg: "/cherkkan (1).png",
+      bg: "/hero-bg.jpg",
+      tabletBg: "/hero-tablet-bg.jpg",
+      mobileBg: "/hero-mobile-bg.jpg",
+      fg: "/cherkkan.png",
       title: "",
       description:
         "Manzo is a contemporary men's clothing brand and one of the leading wholesale mens fashion manufacturers, dedicated to redefining modern fashion. We specialize in high-quality wholesale male clothing and premium wholesale mens wear, empowering individuals with ethically produced mens wholesale clothing. By prioritizing timeless aesthetics over fleeting trends, Manzo creates long-lasting wholesale mens fashion staples designed to stand the test of time.",
     },
     {
       id: 2,
-      bg: "/banner-2.jpg (1).jpeg",
-      mobileBg: "/banner-2-mbl.jpg (1).jpeg",
+      bg: "/banner-2.jpg",
+      mobileBg: "/banner-2-mbl.jpg",
       bgClassName: "hidden md:block w-full h-full object-cover object-top", // Adjusted for better zoom
       bgColor: "rgb(52, 52, 52)",
       fg: null,

@@ -55,7 +55,7 @@ const NewCollection = ({
             className="relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden group"
           >
             <Image
-              src="/manzo deniem.jpg"
+              src="/manzo-deniem.jpg"
               alt="Manzo Men's Denim Collection - Premium wholesale male clothing"
               fill
               className="object-cover transition-transform duration-1000 ease-out group-hover:scale-110"

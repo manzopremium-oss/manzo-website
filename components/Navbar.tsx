@@ -29,8 +29,8 @@ const Navbar = () => {
   // On non-home pages, we want the "scrolled" style (black logo/text) by default
   const showDarkNavbar = isScrolled || !isHomePage;
   const logoSrc = showDarkNavbar
-    ? "/Manzo Logo Black@4x.webp"
-    : "/Manzo Logo White@4x.webp";
+    ? "/manzo-logo-black.webp"
+    : "/manzo-logo-white.webp";
   const navContainerClass = showDarkNavbar ? "py-4" : "py-6";
 
   return (
