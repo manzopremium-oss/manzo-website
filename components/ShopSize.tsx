@@ -22,7 +22,7 @@ const ShopSize = () => {
           className="absolute inset-0 w-full h-full"
         >
           <Image
-            src="/Gemini_Generated_Image_iui7tfiui7tfiui7.png"
+            src="/shop-size-bg.png"
             alt="Models showcasing the latest Manzo wholesale male clothing collections"
             fill
             className="object-cover object-top"

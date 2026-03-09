@@ -9,7 +9,7 @@ export const menMetadata: Metadata = {
     title: "Men's Wholesale Clothing - Manzo",
     description: "Premium wholesale male clothing and mens wear collections.",
     url: "https://www.manzoclothing.com/men",
-    images: ["/234.jpg.jpeg"],
+    images: ["/hero-bg.jpg"],
   },
 };
 
@@ -23,7 +23,7 @@ export const newCollectionMetadata: Metadata = {
     description:
       "Stay ahead of trends with our newest mens wholesale clothing arrivals.",
     url: "https://www.manzoclothing.com/new-collection",
-    images: ["/234.jpg.jpeg"],
+    images: ["/hero-bg.jpg"],
   },
 };
 
@@ -36,7 +36,7 @@ export const bestSellersMetadata: Metadata = {
     title: "Best Sellers - Manzo",
     description: "Proven trending wholesale male clothing and mens wear.",
     url: "https://www.manzoclothing.com/best-sellers",
-    images: ["/234.jpg.jpeg"],
+    images: ["/hero-bg.jpg"],
   },
 };
 
@@ -50,6 +50,6 @@ export const contactMetadata: Metadata = {
     description:
       "Wholesale inquiries and general support for your business needs.",
     url: "https://www.manzoclothing.com/contact",
-    images: ["/234.jpg.jpeg"],
+    images: ["/hero-bg.jpg"],
   },
 };
