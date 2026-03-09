@@ -20,7 +20,7 @@ const NewCollection = ({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Card 1: Men's Winter Collection */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden group"
@@ -48,7 +48,7 @@ const NewCollection = ({
 
           {/* Card 2: Men's Denim Collection */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}

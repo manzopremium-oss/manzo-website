@@ -250,7 +250,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
 
-        <SmoothScrolling>{children}</SmoothScrolling>
+        {children}
         <WhatsAppButton />
         <PWAInstall />
       </body>
