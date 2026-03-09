@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     siteName: "Manzo",
     images: [
       {
-        url: "/234.jpg.jpeg",
+        url: "/hero-bg.jpg",
         width: 1200,
         height: 630,
         alt: "Manzo Clothing - Wholesale Mens Fashion Manufacturers India",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
       "Manzo Clothing - Leading Wholesale Mens Fashion Manufacturers India",
     description:
       "Manzo Clothing offers premium wholesale mens fashion for retailers. High-quality male clothing and mens wear at wholesale prices.",
-    images: ["/234.jpg.jpeg"],
+    images: ["/hero-bg.jpg"],
     site: "@manzoclothing",
     creator: "@manzoclothing",
   },
@@ -107,11 +107,11 @@ const organizationSchema = {
   url: "https://www.manzoclothing.com",
   logo: {
     "@type": "ImageObject",
-    url: "https://www.manzoclothing.com/logo-black.webp",
+    url: "https://www.manzoclothing.com/manzo-logo-black.webp",
     width: 200,
     height: 60,
   },
-  image: "https://www.manzoclothing.com/234.jpg.jpeg",
+  image: "https://www.manzoclothing.com/hero-bg.jpg",
   description:
     "Manzo Clothing is a leading wholesale mens fashion manufacturer based in Bengaluru, India, specializing in high-quality male clothing, mens wear, and modern apparel manufacturing for retailers.",
   foundingLocation: {
@@ -122,7 +122,7 @@ const organizationSchema = {
     "@type": "Brand",
     name: "Manzo Clothing",
     alternateName: "Manzo Clothing India",
-    logo: "https://www.manzoclothing.com/logo-black.webp",
+    logo: "https://www.manzoclothing.com/manzo-logo-black.webp",
   },
   address: {
     "@type": "PostalAddress",
@@ -165,7 +165,7 @@ const organizationSchema = {
         itemOffered: {
           "@type": "Product",
           name: "Wholesale Mens Fashion",
-          image: "https://www.manzoclothing.com/234.jpg.jpeg",
+          image: "https://www.manzoclothing.com/hero-bg.jpg",
           description:
             "Premium wholesale mens clothing and apparel for retailers",
           brand: { "@type": "Brand", name: "Manzo Clothing" },
