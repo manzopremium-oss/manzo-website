@@ -15,7 +15,7 @@ const ShopSize = () => {
       <div className="w-full h-[300px] md:h-[500px] bg-[#87CEEB] relative overflow-hidden">
         {/* Background Image */}
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
@@ -31,7 +31,7 @@ const ShopSize = () => {
 
         {/* Content Overlay */}
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
+          initial={{ opacity: 1, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
