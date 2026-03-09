@@ -9,7 +9,7 @@ export interface Product {
 export const products: Product[] = [
   {
     id: 1,
-    title: "Premium Plain White Shirt",
+    title: "Premium Plain Shirt",
     category: "MEN",
     image: "/plain 1.png",
     description:
@@ -49,7 +49,7 @@ export const products: Product[] = [
   },
   {
     id: 6,
-    title: "Rugged Blue Jeans",
+    title: "Rugged Jeans",
     category: "MEN",
     image: "/jean 1.png",
     description:
@@ -57,7 +57,7 @@ export const products: Product[] = [
   },
   {
     id: 7,
-    title: "Elegant Charcoal Check Shirt",
+    title: "Elegant Check Shirt",
     category: "MEN",
     image: "/check 2.png",
     description:
@@ -65,7 +65,7 @@ export const products: Product[] = [
   },
   {
     id: 8,
-    title: "Coastal Blue Stripe Shirt",
+    title: "Coastal Stripe Shirt",
     category: "MEN",
     image: "/stripe 2.png",
     description:
@@ -73,7 +73,7 @@ export const products: Product[] = [
   },
   {
     id: 9,
-    title: "Urban Grey Denim Jacket",
+    title: "Urban Denim Jacket",
     category: "MEN",
     image: "/deniem 2.jpg",
     description:
@@ -81,7 +81,7 @@ export const products: Product[] = [
   },
   {
     id: 10,
-    title: "Premium Black Plain Shirt",
+    title: "Premium Plain Shirt",
     category: "MEN",
     image: "/plain 2.png",
     description:
@@ -89,7 +89,7 @@ export const products: Product[] = [
   },
   {
     id: 11,
-    title: "Classic Navy Stripe Shirt",
+    title: "Classic Stripe Shirt",
     category: "MEN",
     image: "/stripe 3.png",
     description:
@@ -97,7 +97,7 @@ export const products: Product[] = [
   },
   {
     id: 12,
-    title: "Modern Slate Check Shirt",
+    title: "Modern Check Shirt",
     category: "MEN",
     image: "/check 3.png",
     description:
@@ -113,7 +113,7 @@ export const products: Product[] = [
   },
   {
     id: 14,
-    title: "Relaxed Fit Blue Jeans",
+    title: "Relaxed Fit Jeans",
     category: "MEN",
     image: "/jean 2.png",
     description:
@@ -121,7 +121,7 @@ export const products: Product[] = [
   },
   {
     id: 15,
-    title: "Midnight Grey Plain Shirt",
+    title: "Midnight Plain Shirt",
     category: "MEN",
     image: "/plain 3.png",
     description:
@@ -129,7 +129,7 @@ export const products: Product[] = [
   },
   {
     id: 16,
-    title: "Regal Gold Stripe Shirt",
+    title: "Regal Stripe Shirt",
     category: "MEN",
     image: "/stripe 4.png",
     description:
@@ -137,7 +137,7 @@ export const products: Product[] = [
   },
   {
     id: 17,
-    title: "Forest Green Check Shirt",
+    title: "Forest Check Shirt",
     category: "MEN",
     image: "/check 4.png",
     description:
@@ -153,7 +153,7 @@ export const products: Product[] = [
   },
   {
     id: 19,
-    title: "Fitted Indigo Jeans",
+    title: "Fitted Jeans",
     category: "MEN",
     image: "/jean 3.png",
     description:
@@ -161,7 +161,7 @@ export const products: Product[] = [
   },
   {
     id: 20,
-    title: "Sky Blue Stripe Shirt",
+    title: "Sky Stripe Shirt",
     category: "MEN",
     image: "/stripe 5.png",
     description:
@@ -169,7 +169,7 @@ export const products: Product[] = [
   },
   {
     id: 21,
-    title: "Ruby Red Check Shirt",
+    title: "Ruby Check Shirt",
     category: "MEN",
     image: "/check 5.png",
     description:
