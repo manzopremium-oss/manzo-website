@@ -26,15 +26,15 @@ const NewCollection = ({
             className="relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden group"
           >
             <Image
-              src="/men's fashion_old money style_mans style_ mans outfits.jpeg"
+              src="/winter-collection.jpg"
               alt="Manzo Men's Winter Collection - High-quality wholesale mens fashion"
               fill
               className="object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-700" />
+            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-700" />
 
-            <div className="absolute top-8 left-8">
-              <h3 className="text-2xl font-serif text-black">
+            <div className="absolute top-8 left-8 z-10">
+              <h3 className="text-3xl font-serif text-white tracking-tight">
                 Men&apos;s Winter Collection
               </h3>
             </div>
@@ -55,18 +55,18 @@ const NewCollection = ({
             className="relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden group"
           >
             <Image
-              src="/Take an Official Look at AMBUSH x Levi's Denim___.jpeg"
+              src="/manzo deniem.jpg"
               alt="Manzo Men's Denim Collection - Premium wholesale male clothing"
               fill
               className="object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-700" />
+            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-700" />
 
-            <div className="absolute top-8 right-8 text-right">
-              <h3 className="text-2xl font-serif text-black mb-1">
+            <div className="absolute top-8 right-8 text-right z-10">
+              <h3 className="text-3xl font-serif text-white mb-1 tracking-tight">
                 Men&apos;s Denim
               </h3>
-              <p className="text-xl font-serif text-black">Collection</p>
+              <p className="text-xl font-serif text-white/90">Collection</p>
             </div>
 
             <div className="absolute bottom-8 right-8">
